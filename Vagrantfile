@@ -10,7 +10,6 @@ $provision_script = %{
 sudo apt-get update
 sudo apt-get install unzip vim build-essential git-core curl -y
 git clone https://github.com/openstack-dev/devstack.git
-cd devstack; ./stack.sh
 
 }
 
