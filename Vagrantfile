@@ -13,11 +13,11 @@ echo "stack ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 sudo apt-get update
 sudo apt-get install unzip vim build-essential git-core curl -y
 
-rm -r devstack
-git clone https://github.com/openstack-dev/devstack.git
+# rm -r devstack
+# git clone https://github.com/openstack-dev/devstack.git
 cd devstack
 
-cat >./devstack/local.conf <<EOL
+cat >local.conf <<EOL
 [[local|localrc]]
 FLOATING_RANGE=192.168.1.224/27
 FIXED_RANGE=10.11.12.0/24
@@ -29,7 +29,7 @@ RABBIT_PASSWORD=flopsymopsy
 SERVICE_PASSWORD=iheartksl
 EOL
 
-./devstack/stack.sh
+./stack.sh
 }
 
 Vagrant.configure("2") do |config|
