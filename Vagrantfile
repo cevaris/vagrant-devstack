@@ -7,8 +7,8 @@ ip_address = '192.168.1.100'
 $provision_script = %{
 #!/bin/bash
 
-adduser stack
-echo "stack ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+# adduser stack
+# echo "stack ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 sudo apt-get update
 sudo apt-get install unzip vim build-essential git-core curl -y
@@ -29,6 +29,7 @@ RABBIT_PASSWORD=flopsymopsy
 SERVICE_PASSWORD=iheartksl
 EOL
 
+su vagrant
 ./stack.sh
 }
 
