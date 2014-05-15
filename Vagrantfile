@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 name = 'devstack'
-ip_address = '192.168.1.100'
+ip_address = '10.0.0.100'
 
 $provision_script = %{
 #!/bin/bash
@@ -44,7 +44,7 @@ Vagrant.configure("2") do |config|
     
     node.vm.provider :virtualbox do |v|
       v.name = "#{name}"
-      v.customize ["modifyvm", :id, '--memory', '4096']
+      v.customize ["modifyvm", :id, '--memory', '5120']
     end
 
     node.vm.network :private_network, ip: ip_address
