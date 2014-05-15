@@ -29,7 +29,8 @@ RABBIT_PASSWORD=flopsymopsy
 SERVICE_PASSWORD=iheartksl
 EOL
 
-su vagrant
+sudo chown stack ./.* ./*
+sudo su stack
 ./stack.sh
 }
 
