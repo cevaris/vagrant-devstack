@@ -7,14 +7,11 @@ ip_address = '10.0.0.100'
 $provision_script = %{
 #!/bin/bash
 
-# adduser stack
-# echo "stack ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-
 sudo apt-get update
 sudo apt-get install unzip vim build-essential git-core curl -y
 
-# rm -r devstack
-# git clone https://github.com/openstack-dev/devstack.git
+rm -r devstack
+git clone https://github.com/openstack-dev/devstack.git
 cd devstack
 
 cat >local.conf <<EOL
@@ -29,9 +26,12 @@ RABBIT_PASSWORD=flopsymopsy
 SERVICE_PASSWORD=iheartksl
 EOL
 
-sudo chown stack ./.* ./*
-sudo su stack
-./stack.sh
+# sudo adduser stack
+# sudo echo "stack ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+# sudo chown stack ./.* ./*
+# sudo su stack
+# ./stack.sh
+
 }
 
 Vagrant.configure("2") do |config|
