@@ -31,6 +31,7 @@ EOL
 # sudo chown stack ./.* ./*
 # sudo su stack
 # ./stack.sh
+# shucks
 
 }
 
